@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pomodoro Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Pomodoro Timer</h1>
+    <div class="settings">
+      <label>Work Time (minutes): <input type="number" id="workTime" value="25" min="1" /></label>
+      <label>Break Time (minutes): <input type="number" id="breakTime" value="5" min="1" /></label>
+      <label>Theme:
+        <select id="themeToggle">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+    </div>
+    <div class="task-manager">
+      <input type="text" id="taskInput" placeholder="Enter task name" />
+      <button id="addTask">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+    <div class="timer">
+      <svg width="200" height="200">
+        <circle cx="100" cy="100" r="90" stroke="#eee" stroke-width="15" fill="none" />
+        <circle id="progress" cx="100" cy="100" r="90" stroke="#f54e4e" stroke-width="15" fill="none" stroke-dasharray="565.48" stroke-dashoffset="565.48" />
+      </svg>
+      <div class="time-display">
+        <span id="mode">Work</span>
+        <span id="time">25:00</span>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start">Start</button>
+      <button id="reset">Reset</button>
+    </div>
+    <div id="popup" class="popup">
+      <p>🎉 All Pomodoro cycles complete!</p>
+    </div>
+    <div class="stats">
+      <h2>Daily Statistics</h2>
+      <p>Pomodoros Completed Today: <span id="pomodoroCount">0</span></p>
+    </div>
+  </div>
+  <audio id="ding" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
